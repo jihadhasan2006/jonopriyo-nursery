@@ -13,9 +13,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        /* পুরো পেজের ব্যাকগ্রাউন্ড ছবি */
         body {
-            /* আপনার ব্যাকগ্রাউন্ড ছবির লিংক এখানে থাকবে */
             background-image: url('https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?q=80&w=1000&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
@@ -24,43 +22,30 @@
             min-height: 100vh;
         }
 
-        /* হেডার স্পেস (স্বচ্ছ) */
         .header-bg {
             background: transparent;
             height: 180px;
             width: 100%;
         }
 
-        /* মূল কন্টেইনার */
         .container {
             padding: 0 15px;
         }
 
-        /* --- প্রধান পরিবর্তন এখানে --- */
-        /* সাদা কার্ড (এখন ব্লার ও স্বচ্ছ করা হয়েছে) */
         .profile-card {
-            /* আগের কোড: background-color: #ffffff; */
-            
-            /* নতুন কোড: অর্ধ-স্বচ্ছ সাদা রঙ (0.85 মানে ৮৫% গাঢ়, বাকিটা স্বচ্ছ) */
-            background-color: rgba(255, 255, 255, 0.85);
-            
-            /* নতুন কোড: কার্ডের পেছনের অংশকে ১০ পিক্সেল ব্লার বা ঝাপসা করা */
+            background-color: rgba(255, 255, 255, 0.90);
             backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px); /* সাফারি ব্রাউজারের জন্য */
-
+            -webkit-backdrop-filter: blur(10px);
             max-width: 400px;
             margin: -100px auto 20px; 
             border-radius: 12px;
             padding: 20px;
-            /* শ্যাডো একটু কমিয়ে দেওয়া হলো যাতে ব্লার ইফেক্ট সুন্দর লাগে */
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
             text-align: center;
             position: relative;
-            border: 1px solid rgba(255, 255, 255, 0.3); /* হালকা বর্ডার ইফেক্টের জন্য */
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
-        /* --------------------------- */
 
-        /* লোগো সেকশন */
         .logo-container {
             width: 110px;
             height: 110px;
@@ -79,30 +64,29 @@
             object-fit: cover;
         }
 
-        /* টেক্সট স্টাইল */
         h2 {
-            font-size: 45px;
+            font-size: 38px;
             color: #ff0000;
             margin-bottom: 5px;
             font-weight: 700;
         }
 
         .subtitle {
-            font-size: 32px;
+            font-size: 20px;
             color: #000000;
             margin-bottom: 15px;
+            font-weight: 600;
         }
 
         .description {
-            font-size: 16px;
-            color: #444; /* লেখা একটু গাঢ় করা হলো যাতে ব্লার ব্যাকগ্রাউন্ডে পড়া যায় */
+            font-size: 14px;
+            color: #444;
             line-height: 1.5;
             margin-bottom: 30px;
             padding: 0 10px;
             font-weight: 500;
         }
 
-        /* লিংক সেকশন */
         .links-section {
             text-align: left;
         }
@@ -111,51 +95,87 @@
             font-size: 12px;
             color: #555;
             margin-bottom: 10px;
-            font-weight: 500;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            display: inline-block;
         }
 
         .link-item {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            /* লিংকগুলোর ব্যাকগ্রাউন্ডও একটু স্বচ্ছ করা হলো */
-            background: rgba(253, 253, 253, 0.7); 
-            padding: 15px 10px;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            background: rgba(253, 253, 253, 0.8); 
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
             text-decoration: none;
             color: #333;
-            transition: background 0.2s;
+            transition: transform 0.2s, background 0.2s;
             cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
 
         .link-item:hover {
-            background-color: rgba(245, 245, 245, 0.9);
-        }
-
-        .link-item:last-child {
-            border-bottom: none;
+            background-color: rgba(255, 255, 255, 1);
+            transform: translateY(-2px);
         }
 
         .link-left {
             display: flex;
             align-items: center;
-            gap: 15px;
+        }
+
+        /* --- পেমেন্ট লোগোর সাইজ --- */
+        .payment-logo {
+            width: 28px;  
+            height: 28px;
+            object-fit: contain; 
+            margin-right: 15px; 
+            border-radius: 4px; 
+        }
+
+        /* --- ম্যাপ লোগোর সাইজ (এখানে ছোট করা হয়েছে) --- */
+        .map-logo {
+            width: 28px;  /* আগে ছিল 40px, এখন 28px করা হলো */
+            height: 28px; /* আগে ছিল 40px, এখন 28px করা হলো */
+            object-fit: contain; 
+            margin-right: 15px; 
+            border-radius: 4px; 
+        }
+        /* --------------------------------- */
+
+        .text-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
         }
 
         .link-text {
-            font-size: 15px;
-            font-weight: 500;
+            font-size: 16px;
+            font-weight: 600;
         }
 
-        /* আইকন কালার */
-        .fa-whatsapp { color: #25D366; font-size: 22px; }
-        .fa-facebook { color: #1877F2; font-size: 22px; }
-        .fa-youtube { color: #FF0000; font-size: 22px; }
-        .fa-globe { color: #416de6; font-size: 22px; }
+        .link-subtext {
+            font-size: 12px;
+            color: #666;
+            margin-top: 2px;
+        }
+
+        /* সোশ্যাল আইকন কালার */
+        .fa-whatsapp { color: #25D366; font-size: 24px; margin-right: 15px; }
+        .fa-facebook { color: #1877F2; font-size: 24px; margin-right: 15px; }
+        .fa-youtube { color: #FF0000; font-size: 24px; margin-right: 15px; }
         
         .arrow-icon {
             color: #ccc;
             font-size: 14px;
+        }
+        
+        .payment-section {
+            margin-top: 25px;
         }
 
     </style>
@@ -168,17 +188,17 @@
         <div class="profile-card">
             
             <div class="logo-container">
-                <img src="578257463.jpg" alt="জনপ্রিয় নার্সারী লোগো">
+                <img src="578257463.jpg" alt="জনপ্রিয় নার্সারী লোগো">
             </div>
 
-            <h2>জনপ্রিয় নার্সারী</h2>
+            <h2>জনপ্রিয় নার্সারী</h2>
             <p class="subtitle">প্রোঃ মোঃ মিলন হাসান</p>
             <p class="description">
-                এখানে উন্নত মানের দেশি-বিদেশী কলম চারা, পাইকারী ও খুচরা সুলভ মূল্যে ক্রয়-বিক্রয় করা হয়।
+                এখানে উন্নত মানের দেশি-বিদেশী কলম চারা, পাইকারী ও খুচরা সুলভ মূল্যে ক্রয়-বিক্রয় করা হয়।
             </p>
 
             <div class="links-section">
-                <p class="find-me">Find me on</p>
+                <p class="find-me">Social & Contact</p>
                 
                 <a href="https://wa.me/8801309192565" target="_blank" class="link-item">
                     <div class="link-left">
@@ -206,15 +226,55 @@
 
                 <a href="https://www.google.com/maps?q=24%C2%B041%2727.0%22N+89%C2%B024%2751.5%22E" target="_blank" class="link-item">
                     <div class="link-left">
-                        <i class="fa-solid fa-map-location-dot"></i>
+                        <img src="https://cdn-icons-png.freepik.com/256/2642/2642499.png?semt=ais_white_label" alt="Google Map" class="map-logo">
                         <span class="link-text">Location</span>
                     </div>
                     <i class="fa-solid fa-arrow-right arrow-icon"></i>
                 </a>
+
+                <div class="payment-section">
+                    <p class="find-me">Payment (Personal)</p>
+
+                    <a href="tel:*247#" class="link-item">
+                        <div class="link-left">
+                            <img src="https://static.vecteezy.com/system/resources/previews/068/842/080/non_2x/bkash-logo-horizontal-mobile-banking-app-icon-emblem-transparent-background-free-png.png" alt="bKash Logo" class="payment-logo">
+                            
+                            <div class="text-container">
+                                <span class="link-text">bKash (Personal)</span>
+                                <span class="link-subtext">01309-192565</span>
+                            </div>
+                        </div>
+                        <i class="fa-regular fa-copy arrow-icon"></i>
+                    </a>
+
+                    <a href="tel:*167#" class="link-item">
+                        <div class="link-left">
+                            <img src="https://play-lh.googleusercontent.com/9ps_d6nGKQzfbsJfMaFR0RkdwzEdbZV53ReYCS09Eo5MV-GtVylFD-7IHcVktlnz9Mo=w600-h300-pc0xffffff-pd" alt="Nagad Logo" class="payment-logo">
+                            
+                            <div class="text-container">
+                                <span class="link-text">Nagad (Personal)</span>
+                                <span class="link-subtext">0130-9192565</span>
+                            </div>
+                        </div>
+                        <i class="fa-regular fa-copy arrow-icon"></i>
+                    </a>
+
+                    <a href="tel:*322#" class="link-item">
+                        <div class="link-left">
+                            <img src="https://seeklogo.com/images/D/dutch-bangla-rocket-logo-B4D1CC458D-seeklogo.com.png" alt="Rocket Logo" class="payment-logo">
+                            
+                            <div class="text-container">
+                                <span class="link-text">Rocket (Personal)</span>
+                                <span class="link-subtext">0130-9192565</span>
+                            </div>
+                        </div>
+                        <i class="fa-regular fa-copy arrow-icon"></i>
+                    </a>
+                </div>
+
             </div>
         </div>
     </div>
 
 </body>
-
 </html>
